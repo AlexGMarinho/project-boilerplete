@@ -11,6 +11,7 @@ export class LoginController {
         email,
         password,
       });
+      
       return res.json(login);
     } catch (error) {
       return res.json(error);

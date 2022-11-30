@@ -30,6 +30,6 @@ export class LoginUserService {
       expiresIn: authConfig.jwt.expiresIn,
     });
 
-    return {user: formatUserResponse(user), token};
+    return { user: formatUserResponse(user), token };
   }
 }

@@ -1,7 +1,7 @@
-import { User } from "@prisma/client";
 import { prismaClient } from "../../../databases/prismaClient";
 import { AppError } from "../../../shared/errors/AppError";
 import { hash } from "bcryptjs";
+import { formatUserResponse, UserResponse } from "../../../shared/userHelper";
 
 interface IRequest {
   name: string;
@@ -10,7 +10,7 @@ interface IRequest {
 }
 
 export class CreateUserService {
-  async execute({ name, email, password }: IRequest): Promise<User> {
+  async execute({ name, email, password }: IRequest): Promise<UserResponse> {
     const emailExist = await prismaClient.user.findUnique({ where: { email } });
 
     if (emailExist) throw new AppError("Email address already used");
@@ -25,6 +25,6 @@ export class CreateUserService {
       },
     });
 
-    return user;
+    return formatUserResponse(user);
   }
 }

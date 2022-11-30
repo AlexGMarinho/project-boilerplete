@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { UsersController } from "../controllers/UsersController";
-import { ProfileController } from "../controllers/ProfileController";
+import { UsersController } from "../../controllers/UsersController";
+import { ProfileController } from "../../controllers/ProfileController";
 import { celebrate, Joi, Segments } from "celebrate";
-import { isAuthenticated } from "../../../middlewares/isAuthenticated";
+import { isAuthenticated } from "../../../../middlewares/isAuthenticated";
 
 export const usersRouter = Router();
 
