@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { loginRouter } from "../../../modules/users/services/routes/login.router";
-import { usersRouter } from "../../../modules/users/services/routes/user.router";
+import { loginRouter } from "../../../modules/users/routes/login.router";
+import { usersRouter } from "../../../modules/users/routes/user.router";
 
 export const router = Router();
 
